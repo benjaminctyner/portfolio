@@ -6,9 +6,12 @@ import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
+import { Link } from 'react-router-dom';
+import { projects } from '../constants';
+import { li, github } from '../assets';
 // import { CanvasLoader } from './Loader';
 
-const Contact = () => {
+const Contact = ({ source_code_link, li_link }) => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: '',
@@ -94,18 +97,18 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder='What is your name?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-medium mb-4'>Your Email</span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder='What is your email?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -116,17 +119,39 @@ const Contact = () => {
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder='What you would you like to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
-
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-            {loading ? 'Sending...' : 'Send'}
-          </button>
+          <div className='flex gap-20 '>
+            <button
+              type='submit'
+              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            >
+              {loading ? 'Sending...' : 'Send'}
+            </button>
+            <Link to={'https://github.com/benjaminctyner/icon-generator-ai/'}>
+              <div className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'>
+                <img
+                  src={github}
+                  alt='source code'
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </div>
+            </Link>
+            <Link to={'https://www.linkedin.com/in/ben-tyner/'}>
+              <div
+                onClick={() => window.open(li_link, '_blank')}
+                className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              >
+                <img
+                  src={li}
+                  alt='source code'
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </div>
+            </Link>
+          </div>
         </form>
       </motion.div>
 

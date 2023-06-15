@@ -30,6 +30,7 @@ import ac from './company/ac.jpg';
 import gt from './company/gt.jpg';
 
 import aiIcon from './ai-icon.png';
+import li from './linkedin-logo.png';
 
 export {
   logo,
@@ -59,4 +60,5 @@ export {
   ac,
   gt,
   aiIcon,
+  li,
 };

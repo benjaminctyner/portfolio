@@ -46,7 +46,7 @@ const About = () => {
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[]30px'
       >
         I'm an aspiring software developer looking to leverage my civil
-        enginnering experience and creativity to impress you with my work.
+        engineering experience and creativity to impress you with my skills.
       </motion.p>
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (

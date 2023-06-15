@@ -122,7 +122,7 @@ const experiences = [
     date: 'January 2020 - April 2023',
     points: [
       'Led and assisted in project management decisions while maintaining client and contractor relationships.',
-      'Developed numerical models of riverine, hydraulic, and hydrologic systems for design analysis.',
+      'Developed numerical models of riverine, hydraulic, and hydrologic systems.',
       'Designed culverts and drainage features along highway environments.',
       'Composed technical engineering reports documenting analysis and design methodologies.',
     ],
@@ -140,11 +140,11 @@ const experiences = [
     ],
   },
   {
-    title: 'Site/Civil Enginere',
+    title: 'Site/Civil Engineer',
     company_name: 'Transystems, Formally SEPI',
     icon: transystems,
     iconBg: '#FFFFFF',
-    date: 'Jan 2022 - Jan 2023',
+    date: 'February 2017 - August 2018',
     points: [
       'Developed full site design, construction specification, modeling, and management of private and municipal developments.',
       'Composed construction contract and bidding packages.',
@@ -202,6 +202,7 @@ const projects = [
     image: aiIcon,
     source_code_link: 'https://github.com/benjaminctyner/icon-generator-ai/',
     host_link: 'http://icons.ben-t.dev',
+    li_link: 'https://www.linkedin.com/in/ben-tyner/',
   },
 ];
 
