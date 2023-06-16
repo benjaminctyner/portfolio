@@ -130,7 +130,7 @@ const Contact = ({ source_code_link, li_link }) => {
             >
               {loading ? 'Sending...' : 'Send'}
             </button>
-            <Link to={'https://github.com/benjaminctyner/icon-generator-ai/'}>
+            <Link to={'https://github.com/benjaminctyner/'}>
               <div className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'>
                 <img
                   src={github}
