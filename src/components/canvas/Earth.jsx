@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
-import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Preload } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
 
 import CanvasLoader from '../Loader';
 
@@ -14,22 +14,7 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
-
-    setIsMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
-  }, []);
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' });
 
   return (
     <Canvas
@@ -45,13 +30,16 @@ const EarthCanvas = () => {
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        {!isMobile && (
-          <OrbitControls
-            autoRotate
-            enableZoom={false}
-            maxPolarAngle={Math.PI}
-            minPolarAngle={0}
-          />
+        {isBigScreen && (
+          <>
+            <OrbitControls
+              autoRotate
+              enableZoom={false}
+              maxPolarAngle={Math.PI}
+              minPolarAngle={0}
+            />
+            <Earth />
+          </>
         )}
 
         <Earth />
