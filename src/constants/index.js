@@ -156,8 +156,7 @@ const experiences = [
 
 const testimonials = [
   {
-    testimonial:
-      'Ben is an enthousiastic worker who cares about his clients and deliverables.',
+    testimonial: 'Ben really cares about his clients and deliverables.',
     name: 'Adrienne Cox',
     designation: 'Division 3 Planning Engineer',
     company: 'NCDOT',
