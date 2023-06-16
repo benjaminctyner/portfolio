@@ -163,7 +163,7 @@ const testimonials = [
     image: ac,
   },
   {
-    testimonial: 'Ben gets the job done.',
+    testimonial: 'He gets the job done.',
     name: 'Greg Thompson',
     designation: 'Senior Project Manager',
     company: 'Summit Design and Engineering Services',
