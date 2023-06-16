@@ -178,7 +178,7 @@ const projects = [
       'Web-based, AI powered, icon generator that saves you from paying for a designer and wasting time.',
     tags: [
       {
-        name: 'Next.js',
+        name: 'next.js',
         color: 'blue-text-gradient',
       },
       {
