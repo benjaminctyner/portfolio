@@ -6,6 +6,8 @@ import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
+import { useMediaQuery } from 'react-responsive';
+
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
@@ -35,6 +37,8 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' });
+  const smallServices = services.slice(0, -1);
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -49,9 +53,13 @@ const About = () => {
         engineering experience and creativity to impress you with my skills.
       </motion.p>
       <div className='mt-20 flex flex-wrap gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+        {isBigScreen
+          ? services.map((service, index) => (
+              <ServiceCard key={service.title} index={index} {...service} />
+            ))
+          : smallServices.map((service, index) => (
+              <ServiceCard key={service.title} index={index} {...service} />
+            ))}
       </div>
     </>
   );
