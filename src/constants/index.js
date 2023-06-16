@@ -148,7 +148,6 @@ const experiences = [
     points: [
       'Developed full site design, construction specification, modeling, and management of private and municipal developments.',
       'Composed construction contract and bidding packages.',
-      'Implementing responsive design and ensuring cross-browser compatibility.',
       'Represented SEPI Engineering as the Town of Leland contracted engineer at Town Review Council meetings',
     ],
   },
