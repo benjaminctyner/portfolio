@@ -37,7 +37,7 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' });
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1200px)' });
   const smallServices = services.slice(0, -1);
   return (
     <>
