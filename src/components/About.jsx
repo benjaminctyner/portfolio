@@ -52,7 +52,7 @@ const About = () => {
         I'm an aspiring software developer looking to leverage my civil
         engineering experience and creativity to impress you with my skills.
       </motion.p>
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex justify-center flex-wrap gap-10'>
         {isBigScreen
           ? services.map((service, index) => (
               <ServiceCard key={service.title} index={index} {...service} />
