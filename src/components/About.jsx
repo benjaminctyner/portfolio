@@ -8,37 +8,58 @@ import { SectionWrapper } from '../hoc';
 
 import { useMediaQuery } from 'react-responsive';
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
+const ServiceCard = ({ index, title, icon, isTabletOrMobile }) => {
+  return (
+    <>
+      {isTabletOrMobile && (
+        <div className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'>
+          <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
+            <img
+              src={icon}
+              alt='web-development'
+              className='w-16 h-16 object-contain'
+            />
 
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+            <h3 className='text-white text-[20px] font-bold text-center'>
+              {title}
+            </h3>
+          </div>
+        </div>
+      )}
+      <Tilt className='xs:w-[250px] w-full'>
+        <motion.div
+          variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
+          className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+        >
+          <div
+            options={{
+              max: 45,
+              scale: 1,
+              speed: 450,
+            }}
+            className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+          >
+            <img
+              src={icon}
+              alt='web-development'
+              className='w-16 h-16 object-contain'
+            />
+
+            <h3 className='text-white text-[20px] font-bold text-center'>
+              {title}
+            </h3>
+          </div>
+        </motion.div>
+      </Tilt>
+    </>
+  );
+};
 
 const About = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1400px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const smallServices = services.slice(0, -1);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -55,10 +76,20 @@ const About = () => {
       <div className='mt-20 flex justify-center flex-wrap gap-10'>
         {isBigScreen
           ? services.map((service, index) => (
-              <ServiceCard key={service.title} index={index} {...service} />
+              <ServiceCard
+                key={service.title}
+                index={index}
+                {...service}
+                {...isTabletOrMobile}
+              />
             ))
           : smallServices.map((service, index) => (
-              <ServiceCard key={service.title} index={index} {...service} />
+              <ServiceCard
+                key={service.title}
+                index={index}
+                {...service}
+                {...isTabletOrMobile}
+              />
             ))}
       </div>
     </>
