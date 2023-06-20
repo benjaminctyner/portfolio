@@ -23,13 +23,13 @@ const Navbar = () => {
           <img
             src={logo}
             alt='logo'
-            className='w-9 h-9 object-contain rounded-md'
+            className='lg:w-9 lg:h-9 sm:w-20 sm:h-20 object-contain rounded-md'
           />
-          <p className='text-white text-[18px] font-bold cursor-pointer'>
+          <p className='text-white lg:text-[18px] sm:text-[30px] font-bold cursor-pointer'>
             Ben | Portfolio
           </p>
         </Link>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none lg:flex sm:hidden flex-row gap-10'>
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -42,11 +42,11 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:flex lg:hidden flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
-            className='w-[28px] h-[28px] object-contain cursor-pointer'
+            className='w-[36px] h-[36px] object-contain cursor-pointer'
             onClick={() => setToggle(!toggle)}
           />
           <div
@@ -60,7 +60,7 @@ const Navbar = () => {
                   key={link.id}
                   className={`${
                     active === link.title ? 'text-white' : 'text-secondary'
-                  } font-poppins text-[16px] font-medium cursor-pointer`}
+                  } font-poppins text-[30px] font-medium cursor-pointer`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
